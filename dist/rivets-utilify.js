@@ -1,12 +1,12 @@
 
 /*!!
- * Boilerplate.js v0.0.1
+ * RivetsUtilify.js v0.1.0
  * https://github.com/zeindelf/rivets-utilify
  *
  * Copyright (c) 2017-2018 Zeindelf
  * Released under the MIT license
  *
- * Date: 2018-05-20T21:21:11.186Z
+ * Date: 2018-05-20T23:51:46.792Z
  */
 
 (function (global, factory) {
@@ -437,7 +437,7 @@
          * Version
          * @type {String}
          */
-        this.version = '0.0.1';
+        this.version = '0.1.0';
 
         /**
          * Package name

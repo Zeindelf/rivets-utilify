@@ -5,7 +5,7 @@ const pkg = require('./package');
 const now = new Date();
 const banner = `
 /*!!
- * Boilerplate.js v${pkg.version}
+ * RivetsUtilify.js v${pkg.version}
  * https://github.com/${pkg.repository}
  *
  * Copyright (c) 2017-${now.getFullYear()} ${pkg.author.name}
