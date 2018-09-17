@@ -1,6 +1,6 @@
 
-import CONSTANTS from './rivets-utilify.constants.js';
-import rivetsUtilifyMethods from './rivets-utilify.methods.js';
+import CONSTANTS from './rivets-utilify.constants';
+import rivetsUtilifyMethods from './rivets-utilify.methods';
 
 /**
  * Create a RivetsUtilify class
@@ -12,7 +12,7 @@ class RivetsUtilify {
          * Version
          * @type {String}
          */
-        this.version = '0.1.0';
+        this.version = '0.2.0';
 
         /**
          * Package name
@@ -29,7 +29,7 @@ class RivetsUtilify {
             throw new TypeError(CONSTANTS.MESSAGES.utilify);
         }
 
-        if ( utilify.version < CONSTANTS.MESSAGES.utilifyVersion ) {
+        if ( utilify.semverCompare(utilify.version, CONSTANTS.MESSAGES.utilifyVersion) < 0 ) {
             throw new Error(CONSTANTS.MESSAGES.utilifyVersionMessage);
         }
 

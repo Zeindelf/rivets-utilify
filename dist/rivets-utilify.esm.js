@@ -1,21 +1,21 @@
 
 /*!!
- * RivetsUtilify.js v0.1.0
+ * RivetsUtilify.js v0.2.0
  * https://github.com/zeindelf/rivets-utilify
  *
  * Copyright (c) 2017-2018 Zeindelf
  * Released under the MIT license
  *
- * Date: 2018-05-20T23:51:46.792Z
+ * Date: 2018-09-17T18:40:04.493Z
  */
 
-var utilifyVersion = '0.3.5';
+var utilifyVersion = '0.8.0';
 
 var CONSTANTS = {
     MESSAGES: {
         utilify: 'Utilify.js is required and must be an instance. Download it from https://www.npmjs.com/package/utilify-js',
         utilifyVersion: utilifyVersion,
-        vtexUtilsVersionMessage: 'Utilify version must be higher than ' + utilifyVersion + '. Download last version on https://www.npmjs.com/package/utilify'
+        utilifyVersionMessage: 'Utilify version must be ' + utilifyVersion + ' or higher. Download last version on https://www.npmjs.com/package/utilify'
     }
 };
 
@@ -431,7 +431,7 @@ var RivetsUtilify = function RivetsUtilify(utilify) {
      * Version
      * @type {String}
      */
-    this.version = '0.1.0';
+    this.version = '0.2.0';
 
     /**
      * Package name
@@ -448,7 +448,7 @@ var RivetsUtilify = function RivetsUtilify(utilify) {
         throw new TypeError(CONSTANTS.MESSAGES.utilify);
     }
 
-    if (utilify.version < CONSTANTS.MESSAGES.utilifyVersion) {
+    if (utilify.semverCompare(utilify.version, CONSTANTS.MESSAGES.utilifyVersion) < 0) {
         throw new Error(CONSTANTS.MESSAGES.utilifyVersionMessage);
     }
 
