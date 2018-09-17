@@ -1,6 +1,6 @@
 {
   "name": "rivets-utilify",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Rivets formatters for using with UtilifyJS",
   "main": "dist/rivets-utilify.common.js",
   "module": "dist/rivets-utilify.esm.js",

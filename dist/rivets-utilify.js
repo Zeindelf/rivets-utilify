@@ -1,12 +1,12 @@
 
 /*!!
- * RivetsUtilify.js v0.2.0
+ * RivetsUtilify.js v0.2.1
  * https://github.com/zeindelf/rivets-utilify
  *
  * Copyright (c) 2017-2018 Zeindelf
  * Released under the MIT license
  *
- * Date: 2018-09-17T18:40:04.493Z
+ * Date: 2018-09-17T18:49:59.602Z
  */
 
 (function (global, factory) {
@@ -437,7 +437,7 @@
          * Version
          * @type {String}
          */
-        this.version = '0.2.0';
+        this.version = '0.2.1';
 
         /**
          * Package name
@@ -454,7 +454,7 @@
             throw new TypeError(CONSTANTS.MESSAGES.utilify);
         }
 
-        if (utilify.semverCompare(utilify.version, CONSTANTS.MESSAGES.utilifyVersion) < 0) {
+        if (utilify.globalHelpers.semverCompare(utilify.version, CONSTANTS.MESSAGES.utilifyVersion) < 0) {
             throw new Error(CONSTANTS.MESSAGES.utilifyVersionMessage);
         }
 
