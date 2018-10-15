@@ -12,7 +12,7 @@ class RivetsUtilify {
          * Version
          * @type {String}
          */
-        this.version = '0.2.1';
+        this.version = '0.2.2';
 
         /**
          * Package name
@@ -27,10 +27,6 @@ class RivetsUtilify {
 
         if ( utilify.name !== '@UtilifyJS' ) {
             throw new TypeError(CONSTANTS.MESSAGES.utilify);
-        }
-
-        if ( utilify.globalHelpers.semverCompare(utilify.version, CONSTANTS.MESSAGES.utilifyVersion) < 0 ) {
-            throw new Error(CONSTANTS.MESSAGES.utilifyVersionMessage);
         }
 
         /**

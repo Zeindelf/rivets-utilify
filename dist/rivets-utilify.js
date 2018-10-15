@@ -1,12 +1,12 @@
 
 /*!!
- * RivetsUtilify.js v0.2.1
+ * RivetsUtilify.js v0.2.2
  * https://github.com/zeindelf/rivets-utilify
  *
  * Copyright (c) 2017-2018 Zeindelf
  * Released under the MIT license
  *
- * Date: 2018-09-17T18:49:59.602Z
+ * Date: 2018-10-15T20:06:55.200Z
  */
 
 (function (global, factory) {
@@ -15,13 +15,9 @@
     (global.RivetsUtilify = factory());
 }(this, (function () { 'use strict';
 
-    var utilifyVersion = '0.8.0';
-
     var CONSTANTS = {
         MESSAGES: {
-            utilify: 'Utilify.js is required and must be an instance. Download it from https://www.npmjs.com/package/utilify-js',
-            utilifyVersion: utilifyVersion,
-            utilifyVersionMessage: 'Utilify version must be ' + utilifyVersion + ' or higher. Download last version on https://www.npmjs.com/package/utilify'
+            utilify: 'Utilify.js is required and must be an instance. Download it from https://www.npmjs.com/package/utilify-js'
         }
     };
 
@@ -431,40 +427,36 @@
      */
 
     var RivetsUtilify = function RivetsUtilify(utilify) {
-        classCallCheck(this, RivetsUtilify);
+      classCallCheck(this, RivetsUtilify);
 
-        /**
-         * Version
-         * @type {String}
-         */
-        this.version = '0.2.1';
+      /**
+       * Version
+       * @type {String}
+       */
+      this.version = '0.2.2';
 
-        /**
-         * Package name
-         * @type {String}
-         */
-        this.name = '@RivetsUtilify';
+      /**
+       * Package name
+       * @type {String}
+       */
+      this.name = '@RivetsUtilify';
 
-        // Validate Vtex Utils
-        if (utilify === undefined) {
-            throw new TypeError(CONSTANTS.MESSAGES.utilify);
-        }
+      // Validate Vtex Utils
+      if (utilify === undefined) {
+        throw new TypeError(CONSTANTS.MESSAGES.utilify);
+      }
 
-        if (utilify.name !== '@UtilifyJS') {
-            throw new TypeError(CONSTANTS.MESSAGES.utilify);
-        }
+      if (utilify.name !== '@UtilifyJS') {
+        throw new TypeError(CONSTANTS.MESSAGES.utilify);
+      }
 
-        if (utilify.globalHelpers.semverCompare(utilify.version, CONSTANTS.MESSAGES.utilifyVersion) < 0) {
-            throw new Error(CONSTANTS.MESSAGES.utilifyVersionMessage);
-        }
+      /**
+       * Extend public methods
+       * @type {Method}
+       */
+      utilify.globalHelpers.extend(RivetsUtilify.prototype, rivetsUtilifyMethods);
 
-        /**
-         * Extend public methods
-         * @type {Method}
-         */
-        utilify.globalHelpers.extend(RivetsUtilify.prototype, rivetsUtilifyMethods);
-
-        this.init(utilify.globalHelpers);
+      this.init(utilify.globalHelpers);
     };
 
     return RivetsUtilify;
